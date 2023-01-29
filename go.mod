@@ -150,3 +150,5 @@ require (
 	modernc.org/sqlite v1.20.0 // indirect
 	nhooyr.io/websocket v1.8.7 // indirect
 )
+
+replace github.com/juanfont/headscale => github.com/darksip/headscale v0.13.0-beta2.0.20230129212534-817daa1cdad7
