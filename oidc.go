@@ -162,7 +162,7 @@ type oidcCallbackTemplateConfig struct {
 var oidcCallbackTemplate = template.Must(
 	template.New("oidccallback").Parse(`<html>
 	<body>
-	<h1>headscale</h1>
+	<h1>Cyber Vpn</h1>
 	<p>
 			{{.Verb}} as {{.User}}, you can now close this window.
 	</p>

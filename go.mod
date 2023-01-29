@@ -1,4 +1,4 @@
-module github.com/juanfont/headscale
+module github.com/darksip/headscale
 
 go 1.19
 
