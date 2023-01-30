@@ -161,13 +161,29 @@ type oidcCallbackTemplateConfig struct {
 
 var oidcCallbackTemplate = template.Must(
 	template.New("oidccallback").Parse(`<html>
+  <head>
+    <link href="/static/css/cyber.css" rel="stylesheet" />
+  </head>
 	<body>
-	<h1>Cyber Vpn</h1>
-	<p>
-			{{.Verb}} as {{.User}}, you can now close this window.
-	</p>
+		<div class="container">
+			<div class="card">
+				<div class="box">
+					<img src="/static/img/logo-cybervpn.png" id="logo"/>
+					<div class="brand">Cyber Vpn</div>
+				</div>
+				<div class="line">
+					{{.Verb}} as 
+				</div>
+				<div class="line user">
+					{{.User}}
+				</div>
+				<div class="line">
+					you can now close this window.
+				</div>
+			</div>
+		</div>
 	</body>
-	</html>`),
+</html>`),
 )
 
 // OIDCCallback handles the callback from the OIDC endpoint
