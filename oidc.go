@@ -733,6 +733,7 @@ func renderOIDCCallbackTemplate(
 	claims *IDTokenClaims,
 ) (*bytes.Buffer, error) {
 	var content bytes.Buffer
+	log.Debug().Caller().Str("func", "OIDCCallback").Msg("Return OIDC Callback Template")
 	if err := oidcCallbackTemplate.Execute(&content, oidcCallbackTemplateConfig{
 		User: claims.Email,
 		Verb: "Authenticated",
