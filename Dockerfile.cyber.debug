@@ -9,13 +9,14 @@ RUN go mod download
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux go install -tags ts2019 -ldflags="-s -w -X github.com/juanfont/headscale/cmd/headscale/cli.Version=$VERSION" -a ./cmd/headscale
+RUN CGO_ENABLED=0 GOOS=linux go install -tags ts2019 -ldflags="-s -w -X github.com/darksip/headscale/cmd/headscale/cli.Version=$VERSION" -a ./cmd/headscale
 RUN test -e /go/bin/headscale
 
 # Debug image
 FROM docker.io/golang:1.19.0-bullseye
 
 COPY --from=build /go/bin/headscale /bin/headscale
+COPY --from=build /go/src/oidc. /go/src/
 ENV TZ UTC
 
 # Need to reset the entrypoint or everything will run as a busybox script
